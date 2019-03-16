@@ -10,8 +10,7 @@
 		4C0ED6A0D2BD593F373DC8F4 /* Pods_PassUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186F9187CA7B13C88891672 /* Pods_PassUITests.framework */; };
 		52C8D3DD86C1BD84FD67D207 /* Pods_PassTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C363E1322E16E01F3D6FE578 /* Pods_PassTests.framework */; };
 		840A80F9223DAF82000EA451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A80F8223DAF82000EA451 /* AppDelegate.swift */; };
-		840A80FB223DAF82000EA451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A80FA223DAF82000EA451 /* ViewController.swift */; };
-		840A80FE223DAF82000EA451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840A80FC223DAF82000EA451 /* Main.storyboard */; };
+		840A80FB223DAF82000EA451 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A80FA223DAF82000EA451 /* HomeViewController.swift */; };
 		840A8100223DAF83000EA451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840A80FF223DAF83000EA451 /* Assets.xcassets */; };
 		840A8103223DAF83000EA451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840A8101223DAF83000EA451 /* LaunchScreen.storyboard */; };
 		840A810E223DAF83000EA451 /* PassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A810D223DAF83000EA451 /* PassTests.swift */; };
@@ -44,8 +43,7 @@
 		7808DA4E26879C52FA4980D2 /* Pods-PassUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassUITests.debug.xcconfig"; path = "Target Support Files/Pods-PassUITests/Pods-PassUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		840A80F5223DAF82000EA451 /* Pass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840A80F8223DAF82000EA451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		840A80FA223DAF82000EA451 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		840A80FD223DAF82000EA451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		840A80FA223DAF82000EA451 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		840A80FF223DAF83000EA451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840A8102223DAF83000EA451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840A8104223DAF83000EA451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,8 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				840A80F8223DAF82000EA451 /* AppDelegate.swift */,
-				840A80FA223DAF82000EA451 /* ViewController.swift */,
-				840A80FC223DAF82000EA451 /* Main.storyboard */,
+				840A80FA223DAF82000EA451 /* HomeViewController.swift */,
 				840A80FF223DAF83000EA451 /* Assets.xcassets */,
 				840A8101223DAF83000EA451 /* LaunchScreen.storyboard */,
 				840A8104223DAF83000EA451 /* Info.plist */,
@@ -275,7 +272,6 @@
 			files = (
 				840A8103223DAF83000EA451 /* LaunchScreen.storyboard in Resources */,
 				840A8100223DAF83000EA451 /* Assets.xcassets in Resources */,
-				840A80FE223DAF82000EA451 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840A80FB223DAF82000EA451 /* ViewController.swift in Sources */,
+				840A80FB223DAF82000EA451 /* HomeViewController.swift in Sources */,
 				840A80F9223DAF82000EA451 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,14 +419,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		840A80FC223DAF82000EA451 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				840A80FD223DAF82000EA451 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		840A8101223DAF83000EA451 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
