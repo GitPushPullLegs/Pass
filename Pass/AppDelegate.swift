@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let homeViewController = HomeViewController()
         let navigationController = UINavigationController(rootViewController: homeViewController)
+        navigationController.navigationBar.tintColor = UIColor(asset: .primary) ?? .red
+        navigationController.navigationBar.barTintColor = .white
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.setValue(true, forKey: "hidesShadow")
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
