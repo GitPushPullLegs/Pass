@@ -10,6 +10,8 @@
 		4C0ED6A0D2BD593F373DC8F4 /* Pods_PassUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186F9187CA7B13C88891672 /* Pods_PassUITests.framework */; };
 		52C8D3DD86C1BD84FD67D207 /* Pods_PassTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C363E1322E16E01F3D6FE578 /* Pods_PassTests.framework */; };
 		8401F507223DBEC400B897E7 /* PassM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401F506223DBEC400B897E7 /* PassM.swift */; };
+		8401F50C223DC09000B897E7 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401F50B223DC09000B897E7 /* TextFieldCell.swift */; };
+		8401F510223DC55600B897E7 /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401F50F223DC55600B897E7 /* PassView.swift */; };
 		840A80F9223DAF82000EA451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A80F8223DAF82000EA451 /* AppDelegate.swift */; };
 		840A80FB223DAF82000EA451 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A80FA223DAF82000EA451 /* HomeViewController.swift */; };
 		840A8100223DAF83000EA451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840A80FF223DAF83000EA451 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		59F133BE3A1E7E74B59A65BE /* Pods_Pass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7808DA4E26879C52FA4980D2 /* Pods-PassUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassUITests.debug.xcconfig"; path = "Target Support Files/Pods-PassUITests/Pods-PassUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8401F506223DBEC400B897E7 /* PassM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassM.swift; sourceTree = "<group>"; };
+		8401F50B223DC09000B897E7 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		8401F50F223DC55600B897E7 /* PassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		840A80F5223DAF82000EA451 /* Pass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840A80F8223DAF82000EA451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840A80FA223DAF82000EA451 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			children = (
 				840A80F8223DAF82000EA451 /* AppDelegate.swift */,
 				840A80FA223DAF82000EA451 /* HomeViewController.swift */,
+				8401F50B223DC09000B897E7 /* TextFieldCell.swift */,
+				8401F50F223DC55600B897E7 /* PassView.swift */,
 				8401F508223DBF9D00B897E7 /* Models */,
 				84E15AF3223DB8800084BC02 /* AssetExtensions.swift */,
 				840A80FF223DAF83000EA451 /* Assets.xcassets */,
@@ -422,7 +428,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E15AF4223DB8800084BC02 /* AssetExtensions.swift in Sources */,
+				8401F510223DC55600B897E7 /* PassView.swift in Sources */,
 				840A80FB223DAF82000EA451 /* HomeViewController.swift in Sources */,
+				8401F50C223DC09000B897E7 /* TextFieldCell.swift in Sources */,
 				8401F507223DBEC400B897E7 /* PassM.swift in Sources */,
 				840A80F9223DAF82000EA451 /* AppDelegate.swift in Sources */,
 			);
