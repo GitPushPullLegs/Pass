@@ -103,6 +103,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8401F511223DD21600B897E7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8401F50B223DC09000B897E7 /* TextFieldCell.swift */,
+				8401F50F223DC55600B897E7 /* PassView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		840A80EC223DAF82000EA451 = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +139,7 @@
 			children = (
 				840A80F8223DAF82000EA451 /* AppDelegate.swift */,
 				840A80FA223DAF82000EA451 /* HomeViewController.swift */,
-				8401F50B223DC09000B897E7 /* TextFieldCell.swift */,
-				8401F50F223DC55600B897E7 /* PassView.swift */,
+				8401F511223DD21600B897E7 /* Components */,
 				8401F508223DBF9D00B897E7 /* Models */,
 				84E15AF3223DB8800084BC02 /* AssetExtensions.swift */,
 				840A80FF223DAF83000EA451 /* Assets.xcassets */,

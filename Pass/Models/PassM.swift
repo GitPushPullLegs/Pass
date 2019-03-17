@@ -18,6 +18,6 @@ class PassM: Object {
 
     // Ignored Properties
     var image: UIImage {
-        return UIImage()
+        return UIImage() // Temp
     }
 }
