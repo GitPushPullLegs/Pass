@@ -12,10 +12,10 @@ class TextFieldCell: UITableViewCell {
 
     var identifier: String = ""
 
-    var textField: UITextField = {
+    lazy var textField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = UIColor.lightGray.withAlphaComponent(0.12)
-        textField.tintColor = UIColor(asset: .primary) ?? .red
+        textField.tintColor = self.tintColor
         textField.placeholder = "Start typing here..."
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.layer.cornerRadius = 8
