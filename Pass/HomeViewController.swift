@@ -34,7 +34,8 @@ class HomeViewController: UITableViewController {
     }
 
     @objc func handleAddPress() {
-        print("Present add view.")
+        let addPassVC = ModifyPassViewController(state: .new)
+        navigationController?.pushViewController(addPassVC, animated: true)
     }
 
     //MARK: - Realm

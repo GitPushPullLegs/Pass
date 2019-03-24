@@ -10,7 +10,11 @@ import UIKit
 
 class TextFieldCell: UITableViewCell {
 
-    var identifier: String = ""
+    override var tintColor: UIColor! {
+        didSet {
+            textField.tintColor = self.tintColor
+        }
+    }
 
     lazy var textField: UITextField = {
         let textField = UITextField()
@@ -31,6 +35,7 @@ class TextFieldCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
         self.addSubview(textField)
         makeConstraints()
     }
@@ -45,6 +50,7 @@ class TextFieldCell: UITableViewCell {
         textField.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -8).isActive = true
         textField.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 4).isActive = true
         textField.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -4).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
 
     func addTarget(target: Any?, action: Selector, forControlEvents: UIControl.Event) {
