@@ -22,6 +22,7 @@ class PassView: UIView {
         case true: makeCode39Constraints()
         case false: makeQRConstraints()
         }
+        observe()
     }
 
     required init?(coder aDecoder: NSCoder) {

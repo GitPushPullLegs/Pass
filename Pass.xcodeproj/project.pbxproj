@@ -19,6 +19,8 @@
 		840A810E223DAF83000EA451 /* PassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A810D223DAF83000EA451 /* PassTests.swift */; };
 		840A8119223DAF83000EA451 /* PassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A8118223DAF83000EA451 /* PassUITests.swift */; };
 		840D799A2246F4BE00DF549B /* ModifyPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D79992246F4BE00DF549B /* ModifyPassViewController.swift */; };
+		845EC64D2249989900FA3ABD /* RealmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EC64C2249989900FA3ABD /* RealmProtocol.swift */; };
+		845EC64F22499B8C00FA3ABD /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */; };
 		84E15AF4223DB8800084BC02 /* AssetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E15AF3223DB8800084BC02 /* AssetExtensions.swift */; };
 		E6C7BDA6B543C06D78909C86 /* Pods_Pass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F133BE3A1E7E74B59A65BE /* Pods_Pass.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		840A8118223DAF83000EA451 /* PassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassUITests.swift; sourceTree = "<group>"; };
 		840A811A223DAF83000EA451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		840D79992246F4BE00DF549B /* ModifyPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPassViewController.swift; sourceTree = "<group>"; };
+		845EC64C2249989900FA3ABD /* RealmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProtocol.swift; sourceTree = "<group>"; };
+		845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		84E15AF3223DB8800084BC02 /* AssetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetExtensions.swift; sourceTree = "<group>"; };
 		892A8A0D3D58F582EF5785E7 /* Pods-PassTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassTests.debug.xcconfig"; path = "Target Support Files/Pods-PassTests/Pods-PassTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C363E1322E16E01F3D6FE578 /* Pods_PassTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,9 +146,11 @@
 				840A80F8223DAF82000EA451 /* AppDelegate.swift */,
 				840A80FA223DAF82000EA451 /* HomeViewController.swift */,
 				840D79992246F4BE00DF549B /* ModifyPassViewController.swift */,
+				845EC64C2249989900FA3ABD /* RealmProtocol.swift */,
 				8401F511223DD21600B897E7 /* Components */,
 				8401F508223DBF9D00B897E7 /* Models */,
 				84E15AF3223DB8800084BC02 /* AssetExtensions.swift */,
+				845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */,
 				840A80FF223DAF83000EA451 /* Assets.xcassets */,
 				840A8101223DAF83000EA451 /* LaunchScreen.storyboard */,
 				840A8104223DAF83000EA451 /* Info.plist */,
@@ -266,13 +272,16 @@
 				TargetAttributes = {
 					840A80F4223DAF82000EA451 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					840A8108223DAF83000EA451 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 840A80F4223DAF82000EA451;
 					};
 					840A8113223DAF83000EA451 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 840A80F4223DAF82000EA451;
 					};
 				};
@@ -439,7 +448,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E15AF4223DB8800084BC02 /* AssetExtensions.swift in Sources */,
+				845EC64D2249989900FA3ABD /* RealmProtocol.swift in Sources */,
 				8401F510223DC55600B897E7 /* PassView.swift in Sources */,
+				845EC64F22499B8C00FA3ABD /* UITextFieldExtensions.swift in Sources */,
 				840D799A2246F4BE00DF549B /* ModifyPassViewController.swift in Sources */,
 				840A80FB223DAF82000EA451 /* HomeViewController.swift in Sources */,
 				8401F50C223DC09000B897E7 /* TextFieldCell.swift in Sources */,

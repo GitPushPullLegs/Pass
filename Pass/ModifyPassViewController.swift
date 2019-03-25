@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ModifyPassViewController: UITableViewController {
+class ModifyPassViewController: UITableViewController, RealmProtocol {
 
     enum State {
         case new, update(PassM)
@@ -62,7 +62,19 @@ class ModifyPassViewController: UITableViewController {
     }
 
     @objc private func handleCompletionPress() {
+        let cleanedTitle = passTitleCell.textField.cleanedString
+        let cleanedCode = passCodeCell.textField.cleanedString
+        let isCode39 = code39Cell.accessoryType == .checkmark ? true : false
 
+        let newPass = generatePass(title: cleanedTitle, code: cleanedCode, isCode39: isCode39)
+        do {
+            try savePass(newPass)
+        } catch {
+            //TODO: - Create error handling.
+            print(error)
+        }
+
+        navigationController?.popViewController(animated: true)
     }
 
     //MARK: - Cells
@@ -107,8 +119,8 @@ class ModifyPassViewController: UITableViewController {
     }()
 
     private func setupTableViewCells() {
-        passTitleCell.addTarget(target: self, action: #selector(handlePassTitleChange), forControlEvents: .valueChanged)
-        passCodeCell.addTarget(target: self, action: #selector(handlePassCodeChange), forControlEvents: .valueChanged)
+        passTitleCell.addTarget(target: self, action: #selector(handlePassTitleChange), forControlEvents: .editingChanged)
+        passCodeCell.addTarget(target: self, action: #selector(handlePassCodeChange), forControlEvents: .editingChanged)
 
         if let pass = state.value {
             passTitleCell.textField.text = pass.title
@@ -124,7 +136,7 @@ class ModifyPassViewController: UITableViewController {
         }
 
         //TODO: - Check if the code can be code39 and if not then disable that choice.
-        
+
     }
 
     //MARK: - TableView
@@ -202,6 +214,16 @@ class ModifyPassViewController: UITableViewController {
         }
     }
 
+    @objc private func handlePassTitleChange(textField: UITextField) {
+        toggleCompletionEnabled()
+    }
+
+    @objc private func handlePassCodeChange(textField: UITextField) {
+        toggleCompletionEnabled()
+    }
+
+    //MARK: - Safety Functions
+
     private func toggleCode39(enabled: Bool) {
         if code39Cell.accessoryType == .checkmark && !enabled {
             exclusivelySelect(0)
@@ -212,11 +234,14 @@ class ModifyPassViewController: UITableViewController {
         code39Cell.selectionStyle = enabled ? .default : .none
     }
 
-    @objc private func handlePassTitleChange(textField: UITextField) {
-        
-    }
+    private func toggleCompletionEnabled() {
+        let cleanedTitle = passTitleCell.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedCode = passCodeCell.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
 
-    @objc private func handlePassCodeChange(textField: UITextField) {
-        
+        if cleanedTitle != "" && cleanedCode != "" {
+            completionButton.isEnabled = true
+        } else {
+            completionButton.isEnabled = false
+        }
     }
 }

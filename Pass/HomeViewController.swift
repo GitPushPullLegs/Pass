@@ -16,6 +16,7 @@ class HomeViewController: UITableViewController {
         view.backgroundColor = .white
         setupNavbar()
         pullData()
+        observe()
     }
 
     //MARK: - Navbar
