@@ -24,6 +24,7 @@ class TextFieldCell: UITableViewCell {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.layer.cornerRadius = 8
         textField.clipsToBounds = true
+        textField.autocapitalizationType = .words
 
         let spacingView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 8))
         textField.leftView = spacingView

@@ -29,7 +29,8 @@ class HomeViewController: UITableViewController {
     private func setupNavbar() {
         title = "Passes"
         navigationController?.navigationBar.tintColor = UIColor(asset: .primary) ?? .red
-        navigationController?.navigationBar.barTintColor = .white
+        let color = UIColor.white.withAlphaComponent(0.9)
+        navigationController?.navigationBar.setBackgroundImage(UIImage.imageFromColor(color: color), for: .default)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.setRightBarButton(addBarButton, animated: true)
     }
@@ -84,7 +85,7 @@ class HomeViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cellData = passes?[indexPath.row] else { return UITableViewCell() }
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = cellData.title
         cell.detailTextLabel?.text = cellData.code
         return cell
