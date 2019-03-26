@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ModifyPassViewController: UITableViewController, RealmProtocol {
+class ModifyPassViewController: UITableViewController {
 
     enum State {
         case new, update(PassM)
@@ -66,12 +66,23 @@ class ModifyPassViewController: UITableViewController, RealmProtocol {
         let cleanedCode = passCodeCell.textField.cleanedString
         let isCode39 = code39Cell.accessoryType == .checkmark ? true : false
 
-        let newPass = generatePass(title: cleanedTitle, code: cleanedCode, isCode39: isCode39)
-        do {
-            try savePass(newPass)
-        } catch {
-            //TODO: - Create error handling.
-            print(error)
+        if let pass = state.value {
+            let updatedValues: [PassM.VariableKey: Any] = [.title: cleanedTitle, .code: cleanedCode, .isCode39: isCode39]
+            do {
+                try pass.setValues(updatedValues)
+            } catch {
+                print(error)
+            }
+        } else {
+            let newPass = PassM(title: cleanedTitle, code: cleanedCode, isCode39: isCode39)
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(newPass)
+                }
+            } catch {
+                print(error)
+            }
         }
 
         navigationController?.popViewController(animated: true)
@@ -196,6 +207,7 @@ class ModifyPassViewController: UITableViewController, RealmProtocol {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.section {
         case 2: exclusivelySelect(indexPath.row)
+        case 3: navigationController?.present(warningAlertController, animated: true, completion: nil)
         default: break
         }
     }
@@ -214,6 +226,8 @@ class ModifyPassViewController: UITableViewController, RealmProtocol {
         }
     }
 
+    //MARK: - TextField Targets
+
     @objc private func handlePassTitleChange(textField: UITextField) {
         toggleCompletionEnabled()
     }
@@ -222,7 +236,7 @@ class ModifyPassViewController: UITableViewController, RealmProtocol {
         toggleCompletionEnabled()
     }
 
-    //MARK: - Safety Functions
+    //MARK: - Safety
 
     private func toggleCode39(enabled: Bool) {
         if code39Cell.accessoryType == .checkmark && !enabled {
@@ -244,4 +258,29 @@ class ModifyPassViewController: UITableViewController, RealmProtocol {
             completionButton.isEnabled = false
         }
     }
+
+    lazy var warningAlertController: UIAlertController = {
+        guard let pass = state.value else { fatalError("No pass in sight.") }
+        let warningAlertController = UIAlertController(title: "Are you sure you want to delete \(pass.title)?", message: "You will not be able to undo this action.", preferredStyle: .actionSheet)
+        warningAlertController.view.tintColor = UIColor(asset: .primary)
+
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+            pass.deleteSelf(completion: { (completed, error) in
+                if let error = error {
+                    print(error) //TODO: - Deal with errors correctly.
+                }
+
+                if completed {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        warningAlertController.addAction(deleteAction)
+        warningAlertController.addAction(cancelAction)
+
+        return warningAlertController
+    }()
 }
