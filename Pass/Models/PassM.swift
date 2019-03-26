@@ -19,7 +19,7 @@ class PassM: Object {
 
     // Ignored Properties
     var image: UIImage {
-        return UIImage() //TODO: - Return actual image.
+        return self.isCode39 ? UIImage.code39(fromString: self.code)! : UIImage.qr(fromString: self.code)
     }
 
     convenience init(title: String, code: String, isCode39: Bool) {

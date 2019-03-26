@@ -142,12 +142,13 @@ class ModifyPassViewController: UITableViewController {
             } else {
                 qrCell.accessoryType = .checkmark
             }
+
+            if !UIImage.canGenerateCode39(fromString: pass.code) {
+                toggleCode39(enabled: false)
+            }
         } else {
             qrCell.accessoryType = .checkmark
         }
-
-        //TODO: - Check if the code can be code39 and if not then disable that choice.
-
     }
 
     //MARK: - TableView
@@ -233,6 +234,7 @@ class ModifyPassViewController: UITableViewController {
     }
 
     @objc private func handlePassCodeChange(textField: UITextField) {
+        toggleCode39(enabled: UIImage.canGenerateCode39(fromString: textField.cleanedString))
         toggleCompletionEnabled()
     }
 
