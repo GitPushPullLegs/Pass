@@ -94,8 +94,8 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let pass = passes?[indexPath.row] else { return }
-        let updateVC = ModifyPassViewController(state: .update(pass))
-        navigationController?.pushViewController(updateVC, animated: true)
+        let previewPassVC = PreviewPassViewController(code: pass)
+        navigationController?.pushViewController(previewPassVC, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
