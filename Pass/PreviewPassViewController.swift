@@ -11,9 +11,9 @@ import RealmSwift
 
 class PreviewPassViewController: UIViewController {
 
-    let code: PassM
-    init(code: PassM) {
-        self.code = code
+    let pass: PassM
+    init(pass: PassM) {
+        self.pass = pass
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -35,12 +35,12 @@ class PreviewPassViewController: UIViewController {
     }()
 
     private func setupNavbar() {
-        self.title = code.title
+        self.title = pass.title
         navigationItem.setRightBarButton(editButton, animated: true)
     }
 
     @objc private func handleEditPress() {
-        let modifyVC = ModifyPassViewController(state: .update(code))
+        let modifyVC = ModifyPassViewController(state: .update(pass))
         navigationController?.pushViewController(modifyVC, animated: true)
     }
 }

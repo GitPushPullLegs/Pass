@@ -12,7 +12,6 @@ import RealmSwift
 class PassView: UIView {
 
     let pass: PassM
-
     init(_ pass: PassM) {
         self.pass = pass
         super.init(frame: CGRect.zero)
