@@ -251,8 +251,8 @@ class ModifyPassViewController: UITableViewController {
     }
 
     private func toggleCompletionEnabled() {
-        let cleanedTitle = passTitleCell.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let cleanedCode = passCodeCell.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedTitle = passTitleCell.textField.cleanedString
+        let cleanedCode = passCodeCell.textField.cleanedString
 
         if cleanedTitle != "" && cleanedCode != "" {
             completionButton.isEnabled = true
