@@ -48,17 +48,17 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         menuCell.tintColor = UIColor(asset: .primary)
         return menuCell
     }()
-    lazy var addToSiriCell: UITableViewCell = {
-        let addToSiriCell = UITableViewCell(style: .subtitle, reuseIdentifier: "atsc")
-        addToSiriCell.textLabel?.text = "Add to Siri"
-        addToSiriCell.detailTextLabel?.text = "Siri can show you your pass without even having to unlock your phone."
-        addToSiriCell.detailTextLabel?.numberOfLines = 0
-        addToSiriCell.detailTextLabel?.lineBreakMode = .byWordWrapping
-        addToSiriCell.tintColor = UIColor(asset: .primary)
-        if pass.isOnSiri {
-            addToSiriCell.accessoryType = .checkmark
+    lazy var addToWatchCell: UITableViewCell = {
+        let addToWatchCell = UITableViewCell(style: .subtitle, reuseIdentifier: "atawc")
+        addToWatchCell.textLabel?.text = "Set Watch"
+        addToWatchCell.detailTextLabel?.text = "Your pass will be readily available on the watch app. Must have an Apple Watch."
+        addToWatchCell.detailTextLabel?.numberOfLines = 0
+        addToWatchCell.detailTextLabel?.lineBreakMode = .byWordWrapping
+        addToWatchCell.tintColor = UIColor(asset: .primary)
+        if pass.isOnWatch {
+            addToWatchCell.accessoryType = .checkmark
         }
-        return addToSiriCell
+        return addToWatchCell
     }()
     lazy var addToWidgetCell: UITableViewCell = {
         let addToWidgetCell = UITableViewCell(style: .subtitle, reuseIdentifier: "atwc")
@@ -88,7 +88,7 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0: return menuCell
-        case 1: return addToSiriCell
+        case 1: return addToWatchCell
         case 2: return addToWidgetCell
         default: return UITableViewCell() // Not worth crashing over.
         }

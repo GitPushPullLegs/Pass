@@ -64,9 +64,9 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate {
 
     func passMenu(didSelectAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 1: print("Add to siri")
+        case 1: print("Set Watch")
         case 2: ExtensionHandler.setWidget(toPass: pass)
-        default: break
+        default: print("Shouldn't ever print"); break
         }
     }
 
