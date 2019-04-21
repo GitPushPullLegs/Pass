@@ -27,6 +27,7 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate {
         setupNavbar()
         setupPassView()
         setupTableView()
+        observe()
     }
 
     //MARK: - Navbar
@@ -76,5 +77,24 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate {
         passView.leftAnchor.constraint(equalTo: safeArea.leftAnchor).isActive = true
         passView.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
         passView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+    }
+
+    //MARK: - Realm Observer
+
+    var token: NotificationToken?
+    private func observe() {
+        token = pass.observe({ [weak self] (changes) in
+            switch changes {
+            case .change(let properties):
+                for property in properties where property.name == "title" {
+                    self?.title = property.newValue as? String
+                }
+            case .deleted:
+                self?.token?.invalidate()
+                self?.navigationController?.popViewController(animated: true)
+            case .error(let error):
+                print(error) //TODO: - Proper error handling
+            }
+        })
     }
 }

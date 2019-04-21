@@ -9,13 +9,13 @@
 import UIKit
 import RealmSwift
 
-protocol PassMenuDelegate {
+protocol PassMenuDelegate: class {
     func passMenu(didSelectAt indexPath: IndexPath)
 }
 
 class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
 
-    var passMenuDelegate: PassMenuDelegate?
+    weak var passMenuDelegate: PassMenuDelegate?
 
     let pass: PassM
     init(pass: PassM) {
