@@ -94,7 +94,7 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let pass = passes?[indexPath.row] else { return }
-        let previewPassVC = PreviewPassViewController(code: pass)
+        let previewPassVC = PreviewPassViewController(pass: pass)
         navigationController?.pushViewController(previewPassVC, animated: true)
     }
 

@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class PreviewPassViewController: UIViewController {
+class PreviewPassViewController: UIViewController, PassMenuDelegate {
 
     let pass: PassM
     init(pass: PassM) {
@@ -25,6 +25,7 @@ class PreviewPassViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupNavbar()
+        setupTableView()
     }
 
     //MARK: - Navbar
@@ -42,5 +43,24 @@ class PreviewPassViewController: UIViewController {
     @objc private func handleEditPress() {
         let modifyVC = ModifyPassViewController(state: .update(pass))
         navigationController?.pushViewController(modifyVC, animated: true)
+    }
+
+    //MARK: - PassMenuTableView
+
+    lazy var passMenu = PassMenuTableView(pass: pass)
+
+    func setupTableView() {
+        passMenu.passMenuDelegate = self
+        view.addSubview(passMenu)
+
+        let safeArea = self.view.safeAreaLayoutGuide
+        passMenu.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+        passMenu.leftAnchor.constraint(equalTo: safeArea.leftAnchor).isActive = true
+        passMenu.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
+        passMenu.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+    }
+
+    func passMenu(didSelectAt indexPath: IndexPath) {
+        print(indexPath)
     }
 }

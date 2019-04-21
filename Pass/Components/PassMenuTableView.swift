@@ -9,12 +9,19 @@
 import UIKit
 import RealmSwift
 
+protocol PassMenuDelegate {
+    func passMenu(didSelectAt indexPath: IndexPath)
+}
+
 class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+
+    var passMenuDelegate: PassMenuDelegate?
 
     let pass: PassM
     init(pass: PassM) {
         self.pass = pass
         super.init(frame: .zero, style: .plain)
+        setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -92,8 +99,7 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
             isCollapsed = !isCollapsed
             toggleRows()
         default:
-            //TODO: - Let the superview know.
-            break
+            passMenuDelegate?.passMenu(didSelectAt: indexPath)
         }
     }
 
