@@ -7,11 +7,14 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        let session = WCSession.default
+        session.delegate = self
+        session.activate()
     }
 
     func applicationDidBecomeActive() {
@@ -53,4 +56,22 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         }
     }
 
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        switch activationState {
+        case .activated:
+            print("Activated session")
+        case .inactive:
+            print("Inactive session")
+        case .notActivated:
+            print("Not activated session")
+        }
+    }
+
+    func session(_ session: WCSession, didReceive file: WCSessionFile) {
+        let fileData = (URL: file.fileURL, passData: file.metadata)
+        PassHandler.storeToFileManager(fromURL: fileData.URL)
+        if let passData = fileData.passData {
+            PassHandler.storeToDefaults(passInfo: passData)
+        }
+    }
 }

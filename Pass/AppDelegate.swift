@@ -26,6 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
+        if WatchHandler.isSupported {
+            let session = WatchHandler.shared
+            if session.isPaired && session.isInstalled {
+                print("Ready to go.")
+            }
+        }
+
         return true
     }
 

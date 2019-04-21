@@ -26,6 +26,8 @@
 		843D1EB6226BFFB200B126EA /* ExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */; };
 		845EC64F22499B8C00FA3ABD /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */; };
 		845EC6512249AD0F00FA3ABD /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */; };
+		846A4470226D1542007A615E /* WatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A446F226D1542007A615E /* WatchHandler.swift */; };
+		846A4472226D2776007A615E /* PassHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A4471226D2776007A615E /* PassHandler.swift */; };
 		84B6F100226D1471009AC8F7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B6F0FE226D1471009AC8F7 /* Interface.storyboard */; };
 		84B6F102226D1472009AC8F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B6F101226D1472009AC8F7 /* Assets.xcassets */; };
 		84B6F109226D1473009AC8F7 /* Watch Pass Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84B6F108226D1473009AC8F7 /* Watch Pass Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -146,6 +148,8 @@
 		843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHandler.swift; sourceTree = "<group>"; };
 		845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		846A446F226D1542007A615E /* WatchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHandler.swift; sourceTree = "<group>"; };
+		846A4471226D2776007A615E /* PassHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassHandler.swift; sourceTree = "<group>"; };
 		84B6F0FC226D1471009AC8F7 /* Watch Pass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch Pass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B6F0FF226D1471009AC8F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		84B6F101226D1472009AC8F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 				840D79992246F4BE00DF549B /* ModifyPassViewController.swift */,
 				84C05CA6226BCCD300D8D0C5 /* PreviewPassViewController.swift */,
 				843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */,
+				846A446F226D1542007A615E /* WatchHandler.swift */,
 				8401F511223DD21600B897E7 /* Components */,
 				8401F508223DBF9D00B897E7 /* Models */,
 				845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */,
@@ -320,6 +325,7 @@
 			children = (
 				84B6F10D226D1473009AC8F7 /* InterfaceController.swift */,
 				84B6F10F226D1473009AC8F7 /* ExtensionDelegate.swift */,
+				846A4471226D2776007A615E /* PassHandler.swift */,
 				84B6F111226D1473009AC8F7 /* NotificationController.swift */,
 				84B6F113226D1473009AC8F7 /* Assets.xcassets */,
 				84B6F115226D1473009AC8F7 /* Info.plist */,
@@ -704,6 +710,7 @@
 			files = (
 				843D1EB6226BFFB200B126EA /* ExtensionHandler.swift in Sources */,
 				845EC6512249AD0F00FA3ABD /* UIImageExtensions.swift in Sources */,
+				846A4470226D1542007A615E /* WatchHandler.swift in Sources */,
 				84E15AF4223DB8800084BC02 /* AssetExtensions.swift in Sources */,
 				8401F510223DC55600B897E7 /* PassView.swift in Sources */,
 				845EC64F22499B8C00FA3ABD /* UITextFieldExtensions.swift in Sources */,
@@ -746,6 +753,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B6F112226D1473009AC8F7 /* NotificationController.swift in Sources */,
+				846A4472226D2776007A615E /* PassHandler.swift in Sources */,
 				84B6F110226D1473009AC8F7 /* ExtensionDelegate.swift in Sources */,
 				84B6F10E226D1473009AC8F7 /* InterfaceController.swift in Sources */,
 			);

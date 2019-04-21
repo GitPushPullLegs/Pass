@@ -37,4 +37,47 @@ class ExtensionHandler {
         defaults.setValue(imageData, forKeyPath: "imageData")
         defaults.setValue(pass.isCode39, forKeyPath: "isCode39")
     }
+
+    //MARK: - Watch App
+
+    static func setWatch(toPass pass: PassM) {
+        let session = WatchHandler.shared
+        let fileURL = storeToFileManager(image: pass.qrImage)
+        let passData: [String: Any] = ["title": pass.title,
+                                       "code": pass.code]
+
+        session.sendPassDataToWatch(file: fileURL, metadata: passData)
+
+        do {
+            try pass.setUniqueValue(true, forKey: .isOnWatch)
+        } catch {
+            print(error)
+        }
+    }
+
+    private static func storeToFileManager(image: UIImage) -> URL {
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { fatalError() }
+        //TODO: - Proper error handling
+
+        let fileName = "currentPass"
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+
+        guard let imageData = image.pngData() ?? image.jpegData(compressionQuality: 1) else { fatalError() }
+
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: fileURL.path)
+            } catch {
+                print(error)
+            }
+        }
+
+        do {
+            try imageData.write(to: fileURL)
+        } catch {
+            print(error)
+        }
+
+        return fileURL
+    }
 }

@@ -105,6 +105,8 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
             isCollapsed = !isCollapsed
             toggleRows()
             return
+        case 1:
+            addToWatchCell.accessoryType = .checkmark
         case 2:
             addToWidgetCell.accessoryType = .checkmark
         default:

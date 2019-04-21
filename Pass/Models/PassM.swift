@@ -22,6 +22,10 @@ class PassM: Object {
     var image: UIImage {
         return self.isCode39 ? UIImage.code39(fromString: self.code)! : UIImage.qr(fromString: self.code)
     }
+    /// Forced QR image for watch app.
+    var qrImage: UIImage {
+        return UIImage.qr(fromString: self.code)
+    }
 
     convenience init(title: String, code: String, isCode39: Bool) {
         self.init()
