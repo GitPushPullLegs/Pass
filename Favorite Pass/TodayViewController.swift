@@ -33,18 +33,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }()
 
     lazy var defaults = UserDefaults(suiteName: "group.joeyisthebest.Pass.Today")
+    var defaultsKeys = (title: "title", code: "code", isCode39: "isCode39", imageData: "imageData")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
 
-        guard let imageData = defaults?.data(forKey: "imageData") else {
+        guard let imageData = defaults?.data(forKey: defaultsKeys.imageData) else {
             nilGuard(); return
         }
 
-        passTitleLabel.text = defaults?.string(forKey: "title")
-        passCodeLabel.text = defaults?.string(forKey: "code")
+        passTitleLabel.text = defaults?.string(forKey: defaultsKeys.title)
+        passCodeLabel.text = defaults?.string(forKey: defaultsKeys.code)
         passImageView.image = UIImage(data: imageData)
 
         view.addSubview(passTitleLabel); view.addSubview(passCodeLabel); view.addSubview(passImageView)
@@ -61,6 +62,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
 
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        preferredContentSize = activeDisplayMode == .expanded ? CGSize(width: 0.0, height: 220) : maxSize
+    }
+
     private func makeConstraints() {
         let safeArea = view.safeAreaLayoutGuide
         passTitleLabel.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 8).isActive = true
@@ -75,7 +80,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         passImageView.topAnchor.constraint(equalTo: passTitleLabel.bottomAnchor, constant: 8).isActive = true
         passImageView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -8).isActive = true
 
-        if defaults?.bool(forKey: "isCode39") ?? false {
+        if defaults?.bool(forKey: defaultsKeys.isCode39) ?? false {
             passImageView.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 8).isActive = true
             passImageView.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -8).isActive = true
         } else {
