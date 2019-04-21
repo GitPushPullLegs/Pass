@@ -19,9 +19,15 @@
 		840A810E223DAF83000EA451 /* PassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A810D223DAF83000EA451 /* PassTests.swift */; };
 		840A8119223DAF83000EA451 /* PassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A8118223DAF83000EA451 /* PassUITests.swift */; };
 		840D799A2246F4BE00DF549B /* ModifyPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D79992246F4BE00DF549B /* ModifyPassViewController.swift */; };
+		843D1EA4226BFC9E00B126EA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D1EA3226BFC9E00B126EA /* NotificationCenter.framework */; };
+		843D1EA7226BFC9E00B126EA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D1EA6226BFC9E00B126EA /* TodayViewController.swift */; };
+		843D1EAA226BFC9E00B126EA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843D1EA8226BFC9E00B126EA /* MainInterface.storyboard */; };
+		843D1EAE226BFC9E00B126EA /* Favorite Pass.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 843D1EA2226BFC9D00B126EA /* Favorite Pass.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		843D1EB6226BFFB200B126EA /* ExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */; };
 		845EC64F22499B8C00FA3ABD /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */; };
 		845EC6512249AD0F00FA3ABD /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */; };
 		84C05CA7226BCCD300D8D0C5 /* PreviewPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C05CA6226BCCD300D8D0C5 /* PreviewPassViewController.swift */; };
+		84C05CA9226BD14B00D8D0C5 /* PassMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C05CA8226BD14B00D8D0C5 /* PassMenuTableView.swift */; };
 		84E15AF4223DB8800084BC02 /* AssetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E15AF3223DB8800084BC02 /* AssetExtensions.swift */; };
 		E6C7BDA6B543C06D78909C86 /* Pods_Pass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F133BE3A1E7E74B59A65BE /* Pods_Pass.framework */; };
 /* End PBXBuildFile section */
@@ -41,7 +47,28 @@
 			remoteGlobalIDString = 840A80F4223DAF82000EA451;
 			remoteInfo = Pass;
 		};
+		843D1EAC226BFC9E00B126EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840A80ED223DAF82000EA451 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 843D1EA1226BFC9D00B126EA;
+			remoteInfo = "Favorite Pass";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		843D1EB2226BFC9E00B126EA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				843D1EAE226BFC9E00B126EA /* Favorite Pass.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		03EAF52351DDB8C15F266F3C /* Pods-PassTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassTests.release.xcconfig"; path = "Target Support Files/Pods-PassTests/Pods-PassTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,9 +92,18 @@
 		840A8118223DAF83000EA451 /* PassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassUITests.swift; sourceTree = "<group>"; };
 		840A811A223DAF83000EA451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		840D79992246F4BE00DF549B /* ModifyPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPassViewController.swift; sourceTree = "<group>"; };
+		843D1EA2226BFC9D00B126EA /* Favorite Pass.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Favorite Pass.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		843D1EA3226BFC9E00B126EA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		843D1EA6226BFC9E00B126EA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		843D1EA9226BFC9E00B126EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		843D1EAB226BFC9E00B126EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843D1EB3226BFE5700B126EA /* Pass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pass.entitlements; sourceTree = "<group>"; };
+		843D1EB4226BFED900B126EA /* Favorite Pass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Favorite Pass.entitlements"; sourceTree = "<group>"; };
+		843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHandler.swift; sourceTree = "<group>"; };
 		845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		84C05CA6226BCCD300D8D0C5 /* PreviewPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPassViewController.swift; sourceTree = "<group>"; };
+		84C05CA8226BD14B00D8D0C5 /* PassMenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassMenuTableView.swift; sourceTree = "<group>"; };
 		84E15AF3223DB8800084BC02 /* AssetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetExtensions.swift; sourceTree = "<group>"; };
 		892A8A0D3D58F582EF5785E7 /* Pods-PassTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassTests.debug.xcconfig"; path = "Target Support Files/Pods-PassTests/Pods-PassTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C363E1322E16E01F3D6FE578 /* Pods_PassTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +136,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		843D1E9F226BFC9D00B126EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843D1EA4226BFC9E00B126EA /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,6 +160,7 @@
 			children = (
 				8401F50B223DC09000B897E7 /* TextFieldCell.swift */,
 				8401F50F223DC55600B897E7 /* PassView.swift */,
+				84C05CA8226BD14B00D8D0C5 /* PassMenuTableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -126,6 +171,7 @@
 				840A80F7223DAF82000EA451 /* Pass */,
 				840A810C223DAF83000EA451 /* PassTests */,
 				840A8117223DAF83000EA451 /* PassUITests */,
+				843D1EA5226BFC9E00B126EA /* Favorite Pass */,
 				840A80F6223DAF82000EA451 /* Products */,
 				AEC0245700EB713BBA9013E9 /* Pods */,
 				A3A2BFBA0317FE5A2F54A455 /* Frameworks */,
@@ -138,6 +184,7 @@
 				840A80F5223DAF82000EA451 /* Pass.app */,
 				840A8109223DAF83000EA451 /* PassTests.xctest */,
 				840A8114223DAF83000EA451 /* PassUITests.xctest */,
+				843D1EA2226BFC9D00B126EA /* Favorite Pass.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,10 +192,12 @@
 		840A80F7223DAF82000EA451 /* Pass */ = {
 			isa = PBXGroup;
 			children = (
+				843D1EB3226BFE5700B126EA /* Pass.entitlements */,
 				840A80F8223DAF82000EA451 /* AppDelegate.swift */,
 				840A80FA223DAF82000EA451 /* HomeViewController.swift */,
 				840D79992246F4BE00DF549B /* ModifyPassViewController.swift */,
 				84C05CA6226BCCD300D8D0C5 /* PreviewPassViewController.swift */,
+				843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */,
 				8401F511223DD21600B897E7 /* Components */,
 				8401F508223DBF9D00B897E7 /* Models */,
 				845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */,
@@ -179,12 +228,24 @@
 			path = PassUITests;
 			sourceTree = "<group>";
 		};
+		843D1EA5226BFC9E00B126EA /* Favorite Pass */ = {
+			isa = PBXGroup;
+			children = (
+				843D1EB4226BFED900B126EA /* Favorite Pass.entitlements */,
+				843D1EA6226BFC9E00B126EA /* TodayViewController.swift */,
+				843D1EA8226BFC9E00B126EA /* MainInterface.storyboard */,
+				843D1EAB226BFC9E00B126EA /* Info.plist */,
+			);
+			path = "Favorite Pass";
+			sourceTree = "<group>";
+		};
 		A3A2BFBA0317FE5A2F54A455 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				59F133BE3A1E7E74B59A65BE /* Pods_Pass.framework */,
 				C363E1322E16E01F3D6FE578 /* Pods_PassTests.framework */,
 				E186F9187CA7B13C88891672 /* Pods_PassUITests.framework */,
+				843D1EA3226BFC9E00B126EA /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,10 +276,12 @@
 				840A80F3223DAF82000EA451 /* Resources */,
 				84E15AF2223DB2CE0084BC02 /* ShellScript */,
 				491F0652453FC3364177B9EF /* [CP] Embed Pods Frameworks */,
+				843D1EB2226BFC9E00B126EA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				843D1EAD226BFC9E00B126EA /* PBXTargetDependency */,
 			);
 			name = Pass;
 			productName = Pass;
@@ -263,19 +326,41 @@
 			productReference = 840A8114223DAF83000EA451 /* PassUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		843D1EA1226BFC9D00B126EA /* Favorite Pass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843D1EB1226BFC9E00B126EA /* Build configuration list for PBXNativeTarget "Favorite Pass" */;
+			buildPhases = (
+				843D1E9E226BFC9D00B126EA /* Sources */,
+				843D1E9F226BFC9D00B126EA /* Frameworks */,
+				843D1EA0226BFC9D00B126EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Favorite Pass";
+			productName = "Favorite Pass";
+			productReference = 843D1EA2226BFC9D00B126EA /* Favorite Pass.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		840A80ED223DAF82000EA451 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Jose Aguilar";
 				TargetAttributes = {
 					840A80F4223DAF82000EA451 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					840A8108223DAF83000EA451 = {
 						CreatedOnToolsVersion = 10.1;
@@ -286,6 +371,14 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 						TestTargetID = 840A80F4223DAF82000EA451;
+					};
+					843D1EA1226BFC9D00B126EA = {
+						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -305,6 +398,7 @@
 				840A80F4223DAF82000EA451 /* Pass */,
 				840A8108223DAF83000EA451 /* PassTests */,
 				840A8113223DAF83000EA451 /* PassUITests */,
+				843D1EA1226BFC9D00B126EA /* Favorite Pass */,
 			);
 		};
 /* End PBXProject section */
@@ -330,6 +424,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843D1EA0226BFC9D00B126EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843D1EAA226BFC9E00B126EA /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,10 +552,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843D1EB6226BFFB200B126EA /* ExtensionHandler.swift in Sources */,
 				845EC6512249AD0F00FA3ABD /* UIImageExtensions.swift in Sources */,
 				84E15AF4223DB8800084BC02 /* AssetExtensions.swift in Sources */,
 				8401F510223DC55600B897E7 /* PassView.swift in Sources */,
 				845EC64F22499B8C00FA3ABD /* UITextFieldExtensions.swift in Sources */,
+				84C05CA9226BD14B00D8D0C5 /* PassMenuTableView.swift in Sources */,
 				84C05CA7226BCCD300D8D0C5 /* PreviewPassViewController.swift in Sources */,
 				840D799A2246F4BE00DF549B /* ModifyPassViewController.swift in Sources */,
 				840A80FB223DAF82000EA451 /* HomeViewController.swift in Sources */,
@@ -479,6 +583,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		843D1E9E226BFC9D00B126EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843D1EA7226BFC9E00B126EA /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -492,6 +604,11 @@
 			target = 840A80F4223DAF82000EA451 /* Pass */;
 			targetProxy = 840A8115223DAF83000EA451 /* PBXContainerItemProxy */;
 		};
+		843D1EAD226BFC9E00B126EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 843D1EA1226BFC9D00B126EA /* Favorite Pass */;
+			targetProxy = 843D1EAC226BFC9E00B126EA /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -501,6 +618,14 @@
 				840A8102223DAF83000EA451 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		843D1EA8226BFC9E00B126EA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				843D1EA9226BFC9E00B126EA /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -626,7 +751,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C881FDBA7171D98BFC378C59 /* Pods-Pass.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pass/Pass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
 				INFOPLIST_FILE = Pass/Info.plist;
@@ -645,7 +772,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BF92263E7DAA1F9456AC7B8 /* Pods-Pass.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pass/Pass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
 				INFOPLIST_FILE = Pass/Info.plist;
@@ -746,6 +875,48 @@
 			};
 			name = Release;
 		};
+		843D1EAF226BFC9E00B126EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Favorite Pass/Favorite Pass.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TBHHC6VWZD;
+				INFOPLIST_FILE = "Favorite Pass/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joeyisthebest.Pass.Favorite-Pass";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		843D1EB0226BFC9E00B126EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Favorite Pass/Favorite Pass.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TBHHC6VWZD;
+				INFOPLIST_FILE = "Favorite Pass/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joeyisthebest.Pass.Favorite-Pass";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -781,6 +952,15 @@
 			buildConfigurations = (
 				840A8124223DAF83000EA451 /* Debug */,
 				840A8125223DAF83000EA451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843D1EB1226BFC9E00B126EA /* Build configuration list for PBXNativeTarget "Favorite Pass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843D1EAF226BFC9E00B126EA /* Debug */,
+				843D1EB0226BFC9E00B126EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
