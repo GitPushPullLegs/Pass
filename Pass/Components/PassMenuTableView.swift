@@ -104,9 +104,13 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         case 0:
             isCollapsed = !isCollapsed
             toggleRows()
+            return
+        case 2:
+            addToWidgetCell.accessoryType = .checkmark
         default:
-            passMenuDelegate?.passMenu(didSelectAt: indexPath)
+            break
         }
+        passMenuDelegate?.passMenu(didSelectAt: indexPath)
     }
 
     var collapsibleIndexPaths = [IndexPath(row: 1, section: 0),

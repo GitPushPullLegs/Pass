@@ -11,7 +11,21 @@ import RealmSwift
 
 class ExtensionHandler {
 
+    //MARK: - Widget
+
+    /// Shares this pass's information with the Today Widget via a shared UserDefaults. Also, set's the isOnWidget variable to true.
     static func setWidget(toPass pass: PassM) {
+        setDefaults(forPass: pass)
+
+        do {
+//            try pass.setValue(true, forKey: .isOnWidget)
+            try pass.setUniqueValue(true, forKey: .isOnWidget)
+        } catch {
+            print(error) //TODO: - Another reminder to do proper error handling
+        }
+    }
+
+    private static func setDefaults(forPass pass: PassM) {
         guard let defaults = UserDefaults(suiteName: "group.joeyisthebest.Pass.Today") else {
             fatalError("ExtensionHandler: Cannot access UserDefaults.")
         }

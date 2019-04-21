@@ -90,6 +90,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
 
     private func nilGuard() {
+        view.addSubview(passTitleLabel)
 
+        let safeArea = view.safeAreaLayoutGuide
+        passTitleLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
+        passTitleLabel.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
+        passTitleLabel.widthAnchor.constraint(lessThanOrEqualTo: safeArea.widthAnchor, constant: -16).isActive = true
+        passTitleLabel.heightAnchor.constraint(lessThanOrEqualTo: safeArea.heightAnchor, constant: -16).isActive = true
+
+        passTitleLabel.text = "You must first set a pass as your favorite within the app."
     }
 }

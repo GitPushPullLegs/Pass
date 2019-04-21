@@ -60,6 +60,25 @@ extension PassM {
             throw error
         }
     }
+
+    /// Loops all passes that have this value and unsets them, then set's this value for this pass. 
+    func setUniqueValue(_ value: Bool, forKey key: VariableKey) throws {
+        do {
+            let realm = try Realm()
+
+            let toBeUnset = realm.objects(PassM.self).filter("\(key.rawValue) = \(value)")
+
+            try realm.write {
+                for each in toBeUnset {
+                    each.setValue(!value, forKeyPath: key.rawValue)
+                }
+
+                self.setValue(value, forKeyPath: key.rawValue)
+            }
+        } catch {
+            throw error
+        }
+    }
 }
 
 extension PassM {
