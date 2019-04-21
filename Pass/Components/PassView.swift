@@ -12,7 +12,7 @@ import RealmSwift
 class PassView: UIView {
 
     let pass: PassM
-    init(_ pass: PassM) {
+    init(pass: PassM) {
         self.pass = pass
         super.init(frame: CGRect.zero)
         addSubviews()
@@ -30,17 +30,19 @@ class PassView: UIView {
 
     //MARK: - Subviews
 
-    var imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = pass.image
         return imageView
     }()
-    var codeLabel: UILabel = {
+    lazy var codeLabel: UILabel = {
         let codeLabel = UILabel()
         codeLabel.translatesAutoresizingMaskIntoConstraints = false
         codeLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
         codeLabel.textAlignment = .center
         codeLabel.highlightedTextColor = UIColor(asset: .primary) ?? .red
+        codeLabel.text = pass.code
         return codeLabel
     }()
 
@@ -55,6 +57,8 @@ class PassView: UIView {
     var qrWidthConstraint: NSLayoutConstraint?
 
     private func makeSharedConstraints() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+
         let safeArea = self.safeAreaLayoutGuide
         imageView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -8).isActive = true
         imageView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
@@ -93,6 +97,7 @@ class PassView: UIView {
                 for property in properties {
                     if property.name == "code" {
                         self?.codeLabel.text = property.newValue as? String
+                        self?.imageView.image = self?.pass.image
                     } else if property.name == "isCode39" {
                         guard let newValue = property.newValue as? Bool else { break }
                         if newValue {

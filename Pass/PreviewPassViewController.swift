@@ -25,6 +25,7 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupNavbar()
+        setupPassView()
         setupTableView()
     }
 
@@ -49,7 +50,7 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate {
 
     lazy var passMenu = PassMenuTableView(pass: pass)
 
-    func setupTableView() {
+    private func setupTableView() {
         passMenu.passMenuDelegate = self
         view.addSubview(passMenu)
 
@@ -57,10 +58,23 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate {
         passMenu.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
         passMenu.leftAnchor.constraint(equalTo: safeArea.leftAnchor).isActive = true
         passMenu.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
-        passMenu.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+        passMenu.bottomAnchor.constraint(equalTo: passView.topAnchor).isActive = true
     }
 
     func passMenu(didSelectAt indexPath: IndexPath) {
         print(indexPath)
+    }
+
+    //MARK: - PassView
+
+    lazy var passView = PassView(pass: pass)
+
+    private func setupPassView() {
+        view.addSubview(passView)
+
+        let safeArea = self.view.safeAreaLayoutGuide
+        passView.leftAnchor.constraint(equalTo: safeArea.leftAnchor).isActive = true
+        passView.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
+        passView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
     }
 }
