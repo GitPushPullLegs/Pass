@@ -54,7 +54,6 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         addToSiriCell.detailTextLabel?.text = "Siri can show you your pass without even having to unlock your phone."
         addToSiriCell.detailTextLabel?.numberOfLines = 0
         addToSiriCell.detailTextLabel?.lineBreakMode = .byWordWrapping
-        addToSiriCell.detailTextLabel?.textColor = .gray
         return addToSiriCell
     }()
     var addToWidgetCell: UITableViewCell = {
@@ -63,7 +62,6 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         addToWidgetCell.detailTextLabel?.text = "Your pass will be readily available in the lockscreen widget."
         addToWidgetCell.detailTextLabel?.numberOfLines = 0
         addToWidgetCell.detailTextLabel?.lineBreakMode = .byWordWrapping
-        addToWidgetCell.detailTextLabel?.textColor = .gray
         return addToWidgetCell
     }()
 
