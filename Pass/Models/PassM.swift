@@ -16,6 +16,7 @@ class PassM: Object {
     @objc dynamic var isCode39 = false
     @objc dynamic var isOnWatch = false
     @objc dynamic var isOnWidget = false
+    @objc dynamic var isOnSiri = false
 
     // Ignored Properties
     var image: UIImage {
@@ -33,7 +34,7 @@ class PassM: Object {
 //MARK: - Setters
 extension PassM {
     enum VariableKey: String {
-        case title, code, isCode39, isOnWatch, isOnWidget
+        case title, code, isCode39, isOnWatch, isOnWidget, isOnSiri
     }
 
     func setValue(_ value: Any, forKey key: VariableKey) throws {

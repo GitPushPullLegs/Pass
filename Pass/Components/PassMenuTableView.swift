@@ -48,20 +48,28 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         menuCell.tintColor = UIColor(asset: .primary)
         return menuCell
     }()
-    var addToSiriCell: UITableViewCell = {
+    lazy var addToSiriCell: UITableViewCell = {
         let addToSiriCell = UITableViewCell(style: .subtitle, reuseIdentifier: "atsc")
         addToSiriCell.textLabel?.text = "Add to Siri"
         addToSiriCell.detailTextLabel?.text = "Siri can show you your pass without even having to unlock your phone."
         addToSiriCell.detailTextLabel?.numberOfLines = 0
         addToSiriCell.detailTextLabel?.lineBreakMode = .byWordWrapping
+        addToSiriCell.tintColor = UIColor(asset: .primary)
+        if pass.isOnSiri {
+            addToSiriCell.accessoryType = .checkmark
+        }
         return addToSiriCell
     }()
-    var addToWidgetCell: UITableViewCell = {
+    lazy var addToWidgetCell: UITableViewCell = {
         let addToWidgetCell = UITableViewCell(style: .subtitle, reuseIdentifier: "atwc")
         addToWidgetCell.textLabel?.text = "Set Widget"
         addToWidgetCell.detailTextLabel?.text = "Your pass will be readily available in the lockscreen widget."
         addToWidgetCell.detailTextLabel?.numberOfLines = 0
         addToWidgetCell.detailTextLabel?.lineBreakMode = .byWordWrapping
+        addToWidgetCell.tintColor = UIColor(asset: .primary)
+        if pass.isOnWidget {
+            addToWidgetCell.accessoryType = .checkmark
+        }
         return addToWidgetCell
     }()
 
