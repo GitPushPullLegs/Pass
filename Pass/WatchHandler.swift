@@ -58,7 +58,7 @@ class WatchHandler: NSObject, WCSessionDelegate {
 
     func session(_ session: WCSession, didFinish fileTransfer: WCSessionFileTransfer, error: Error?) {
         if let error = error {
-            print(error) //TODO: - Handle errors
+            print(error)
         }
 
         print("Triggered fileTransfer didFinish method.")

@@ -21,7 +21,7 @@ class ExtensionHandler {
 //            try pass.setValue(true, forKey: .isOnWidget)
             try pass.setUniqueValue(true, forKey: .isOnWidget)
         } catch {
-            print(error) //TODO: - Another reminder to do proper error handling
+            print(error)
         }
     }
 
@@ -57,7 +57,6 @@ class ExtensionHandler {
 
     private static func storeToFileManager(image: UIImage) -> URL {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { fatalError() }
-        //TODO: - Proper error handling
 
         let fileName = "currentPass"
         let fileURL = documentsDirectory.appendingPathComponent(fileName)

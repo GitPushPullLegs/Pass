@@ -12,7 +12,6 @@ class PassHandler {
     /// Stores the image recieved from the iOS app in the local documents directory.
     static func storeToFileManager(fromURL: URL) {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { fatalError() }
-        //TODO: - Proper error handling
 
         do {
             let imageData = try Data(contentsOf: fromURL)

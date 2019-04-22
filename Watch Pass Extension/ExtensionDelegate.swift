@@ -64,6 +64,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             print("Inactive session")
         case .notActivated:
             print("Not activated session")
+        @unknown default:
+            fatalError()
         }
     }
 

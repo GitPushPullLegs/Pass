@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ModifyPassViewController: UITableViewController {
+class ModifyPassViewController: UITableViewController, ErrorProtocol {
 
     enum State {
         case new, update(PassM)
@@ -269,7 +269,7 @@ class ModifyPassViewController: UITableViewController {
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
             pass.deleteSelf(completion: { (completed, error) in
                 if let error = error {
-                    print(error) //TODO: - Deal with errors correctly.
+                    self.presentError(withTitle: "Oops", withText: "Failed to delete self.")
                 }
 
                 if completed {

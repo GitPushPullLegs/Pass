@@ -16,7 +16,7 @@ class InterfaceController: WKInterfaceController {
     @IBAction func repeatAction() {
         setData()
     }
-    
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         setData()

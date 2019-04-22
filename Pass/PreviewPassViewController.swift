@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class PreviewPassViewController: UIViewController, PassMenuDelegate {
+class PreviewPassViewController: UIViewController, PassMenuDelegate, ErrorProtocol {
 
     let pass: PassM
     init(pass: PassM) {
@@ -64,10 +64,19 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate {
 
     func passMenu(didSelectAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 1: ExtensionHandler.setWatch(toPass: pass)
+        case 1: ExtensionHandler.setWatch(toPass: pass); watchReminder()
         case 2: ExtensionHandler.setWidget(toPass: pass)
         default: print("Shouldn't ever print")
         }
+    }
+
+    // Just so people don't think nothing happened.
+    func watchReminder() {
+        let alertController = UIAlertController(title: "Refresh", message: "If the pass on your watch doesn't immediately change force touch the watch's screen and press reload.", preferredStyle: .alert)
+        alertController.view.tintColor = UIColor(asset: .primary)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.navigationController?.present(alertController, animated: true, completion: nil)
     }
 
     //MARK: - PassView
@@ -96,8 +105,8 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate {
             case .deleted:
                 self?.token?.invalidate()
                 self?.navigationController?.popViewController(animated: true)
-            case .error(let error):
-                print(error) //TODO: - Proper error handling
+            case .error:
+                self?.presentError(withTitle: "Something wen't wrong", withText: "If the error persists please email me.")
             }
         })
     }
