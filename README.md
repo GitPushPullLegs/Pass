@@ -16,5 +16,7 @@ As of right now the app allows you to:
 * Store Code39 barcode passes
 * Display your favorite pass as a lock screen widget
 * Display your favorite pass on the watch app (Does not have to be the same as the lock screen widget pass)
+* "Chirp" the pass code. A chirp is like an audible QR code.
+	* Using an SDK provided by [Chirp.io](https://chirp.io).
 
 More will be added.
