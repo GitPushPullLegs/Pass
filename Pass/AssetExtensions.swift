@@ -20,7 +20,7 @@ extension UIColor {
 
 extension UIImage {
     enum Asset: String {
-        case none = "" // Will return nil, temporary placeholder to silence error.
+        case chevronRight = "ic_chevron_right"
     }
 
     convenience init?(asset: Asset) {

@@ -38,6 +38,11 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
 
     //MARK: - Cells
 
+    let chevronImageView: UIImageView = {
+        let chevronImageView = UIImageView(image: UIImage(asset: .chevronRight))
+        chevronImageView.tintColor = UIColor.lightGray
+        return chevronImageView
+    }()
     lazy var menuCell: UITableViewCell = {
         let menuCell = UITableViewCell()
         menuCell.textLabel?.text = "Extensions"
@@ -46,6 +51,7 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         menuCell.separatorInset = .zero
         menuCell.layoutMargins = .zero
         menuCell.tintColor = UIColor(asset: .primary)
+        menuCell.accessoryView = chevronImageView
         return menuCell
     }()
     lazy var addToWatchCell: UITableViewCell = {
@@ -103,7 +109,7 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         switch indexPath.row {
         case 0:
             isCollapsed = !isCollapsed
-            toggleRows()
+            toggleChevron(); toggleRows()
             return
         case 1:
             addToWatchCell.accessoryType = .checkmark
@@ -113,6 +119,18 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
             break
         }
         passMenuDelegate?.passMenu(didSelectAt: indexPath)
+    }
+
+    private func toggleChevron() {
+        if !isCollapsed {
+            UIView.animate(withDuration: 0.25) {
+                self.chevronImageView.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+            }
+        } else {
+            UIView.animate(withDuration: 0.25) {
+                self.chevronImageView.transform = CGAffineTransform.identity
+            }
+        }
     }
 
     var collapsibleIndexPaths = [IndexPath(row: 1, section: 0),
