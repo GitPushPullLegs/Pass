@@ -66,6 +66,7 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate, ErrorProtoc
         switch indexPath.row {
         case 1: ExtensionHandler.setWatch(toPass: pass); watchReminder()
         case 2: ExtensionHandler.setWidget(toPass: pass)
+        case 3: sendChirp()
         default: print("Shouldn't ever print")
         }
     }
@@ -77,6 +78,19 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate, ErrorProtoc
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(okAction)
         self.navigationController?.present(alertController, animated: true, completion: nil)
+    }
+
+    lazy var chirper = ChirpController.shared
+    func sendChirp() {
+        chirper.sendChirp(withMessage: pass.code) { (complete, error) in
+            if !complete {
+                if let error = error {
+                    presentError(withTitle: "Error playing chirp", withText: error.localizedDescription)
+                } else {
+                    presentError(withTitle: "Error playing chirp", withText: "Something wen't wrong. Please try again.")
+                }
+            }
+        }
     }
 
     //MARK: - PassView

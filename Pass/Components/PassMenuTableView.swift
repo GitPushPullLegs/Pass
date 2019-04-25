@@ -78,6 +78,15 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         }
         return addToWidgetCell
     }()
+    lazy var chirpCell: UITableViewCell = {
+        let chirpCell = UITableViewCell(style: .subtitle, reuseIdentifier: "cc")
+        chirpCell.textLabel?.text = "Play Chirp"
+        chirpCell.detailTextLabel?.text = "Chirp is like an audio QR code. Your pass data is sent via sound."
+        chirpCell.detailTextLabel?.numberOfLines = 0
+        chirpCell.detailTextLabel?.lineBreakMode = .byWordWrapping
+        chirpCell.tintColor = UIColor(asset: .primary)
+        return chirpCell
+    }()
 
     //MARK: - TableView
 
@@ -88,7 +97,7 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isCollapsed ? 1 : 3
+        return isCollapsed ? 1 : 4
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,6 +105,7 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         case 0: return menuCell
         case 1: return addToWatchCell
         case 2: return addToWidgetCell
+        case 3: return chirpCell
         default: return UITableViewCell() // Not worth crashing over.
         }
     }
@@ -134,7 +144,8 @@ class PassMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource
     }
 
     var collapsibleIndexPaths = [IndexPath(row: 1, section: 0),
-                                      IndexPath(row: 2, section: 0)]
+                                      IndexPath(row: 2, section: 0),
+                                      IndexPath(row: 3, section: 0)]
 
     private func toggleRows() {
         self.beginUpdates()

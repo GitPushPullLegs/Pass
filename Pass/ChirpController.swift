@@ -21,7 +21,7 @@ class ChirpController: NSObject {
         if let error = chirp?.setConfig(SecretsHandler.chirpAppConfig) {
             print("Error: \(error)")
         } else {
-            if let error = chirp?.start() {
+            if let error = chirp?.start(in: .send) {
                 print("Error: \(error)")
             } else {
                 print("Chirp enabled.")
