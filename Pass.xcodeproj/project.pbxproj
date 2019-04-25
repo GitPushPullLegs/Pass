@@ -27,6 +27,8 @@
 		843D1EB6226BFFB200B126EA /* ExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */; };
 		845EC64F22499B8C00FA3ABD /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */; };
 		845EC6512249AD0F00FA3ABD /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */; };
+		8461BEAD22716517001C18DE /* ChirpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461BEAC22716517001C18DE /* ChirpController.swift */; };
+		8461BEB022716630001C18DE /* ChirpConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461BEAF22716630001C18DE /* ChirpConnect.framework */; };
 		846A4470226D1542007A615E /* WatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A446F226D1542007A615E /* WatchHandler.swift */; };
 		846A4472226D2776007A615E /* PassHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A4471226D2776007A615E /* PassHandler.swift */; };
 		84B6F100226D1471009AC8F7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B6F0FE226D1471009AC8F7 /* Interface.storyboard */; };
@@ -151,6 +153,8 @@
 		843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHandler.swift; sourceTree = "<group>"; };
 		845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		8461BEAC22716517001C18DE /* ChirpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChirpController.swift; sourceTree = "<group>"; };
+		8461BEAF22716630001C18DE /* ChirpConnect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChirpConnect.framework; path = "../../../../Downloads/ChirpSDK-iOS-3/ChirpConnect.framework"; sourceTree = "<group>"; };
 		846A446F226D1542007A615E /* WatchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHandler.swift; sourceTree = "<group>"; };
 		846A4471226D2776007A615E /* PassHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassHandler.swift; sourceTree = "<group>"; };
 		84B6F0FC226D1471009AC8F7 /* Watch Pass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch Pass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8461BEB022716630001C18DE /* ChirpConnect.framework in Frameworks */,
 				E6C7BDA6B543C06D78909C86 /* Pods_Pass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,10 +280,12 @@
 				843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */,
 				846A446F226D1542007A615E /* WatchHandler.swift */,
 				843417F0227162CF0004EB6E /* SecretsHandler.swift */,
+				8461BEAC22716517001C18DE /* ChirpController.swift */,
 				8401F511223DD21600B897E7 /* Components */,
 				8401F508223DBF9D00B897E7 /* Models */,
 				845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */,
 				845EC64E22499B8C00FA3ABD /* UITextFieldExtensions.swift */,
+				8461BEAF22716630001C18DE /* ChirpConnect.framework */,
 				84E15AF3223DB8800084BC02 /* AssetExtensions.swift */,
 				840A80FF223DAF83000EA451 /* Assets.xcassets */,
 				840A8101223DAF83000EA451 /* LaunchScreen.storyboard */,
@@ -724,6 +731,7 @@
 				84C05CA9226BD14B00D8D0C5 /* PassMenuTableView.swift in Sources */,
 				84C05CA7226BCCD300D8D0C5 /* PreviewPassViewController.swift in Sources */,
 				840D799A2246F4BE00DF549B /* ModifyPassViewController.swift in Sources */,
+				8461BEAD22716517001C18DE /* ChirpController.swift in Sources */,
 				840A80FB223DAF82000EA451 /* HomeViewController.swift in Sources */,
 				8401F50C223DC09000B897E7 /* TextFieldCell.swift in Sources */,
 				8401F507223DBEC400B897E7 /* PassM.swift in Sources */,
@@ -860,6 +868,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -921,6 +930,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -950,6 +960,10 @@
 				CODE_SIGN_ENTITLEMENTS = Pass/Pass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pass",
+				);
 				INFOPLIST_FILE = Pass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -971,6 +985,10 @@
 				CODE_SIGN_ENTITLEMENTS = Pass/Pass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pass",
+				);
 				INFOPLIST_FILE = Pass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
