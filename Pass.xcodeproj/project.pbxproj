@@ -1136,6 +1136,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
+				ENABLE_BITCODE = YES;
 				IBSC_MODULE = Watch_Pass_Extension;
 				INFOPLIST_FILE = "Watch Pass/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joeyDevelops.Gym-Pass.watchkitapp";
@@ -1155,6 +1156,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
+				ENABLE_BITCODE = YES;
 				IBSC_MODULE = Watch_Pass_Extension;
 				INFOPLIST_FILE = "Watch Pass/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joeyDevelops.Gym-Pass.watchkitapp";
@@ -1173,6 +1175,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "Watch Pass Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1195,6 +1198,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "Watch Pass Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
