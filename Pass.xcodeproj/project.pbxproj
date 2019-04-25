@@ -19,6 +19,7 @@
 		840A810E223DAF83000EA451 /* PassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A810D223DAF83000EA451 /* PassTests.swift */; };
 		840A8119223DAF83000EA451 /* PassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A8118223DAF83000EA451 /* PassUITests.swift */; };
 		840D799A2246F4BE00DF549B /* ModifyPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D79992246F4BE00DF549B /* ModifyPassViewController.swift */; };
+		843417F1227162CF0004EB6E /* SecretsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843417F0227162CF0004EB6E /* SecretsHandler.swift */; };
 		843D1EA4226BFC9E00B126EA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D1EA3226BFC9E00B126EA /* NotificationCenter.framework */; };
 		843D1EA7226BFC9E00B126EA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D1EA6226BFC9E00B126EA /* TodayViewController.swift */; };
 		843D1EAA226BFC9E00B126EA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843D1EA8226BFC9E00B126EA /* MainInterface.storyboard */; };
@@ -139,6 +140,7 @@
 		840A8118223DAF83000EA451 /* PassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassUITests.swift; sourceTree = "<group>"; };
 		840A811A223DAF83000EA451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		840D79992246F4BE00DF549B /* ModifyPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPassViewController.swift; sourceTree = "<group>"; };
+		843417F0227162CF0004EB6E /* SecretsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretsHandler.swift; sourceTree = "<group>"; };
 		843D1EA2226BFC9D00B126EA /* Favorite Pass.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Favorite Pass.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843D1EA3226BFC9E00B126EA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		843D1EA6226BFC9E00B126EA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				84DA097F226D419A00E34690 /* ErrorProtocol.swift */,
 				843D1EB5226BFFB200B126EA /* ExtensionHandler.swift */,
 				846A446F226D1542007A615E /* WatchHandler.swift */,
+				843417F0227162CF0004EB6E /* SecretsHandler.swift */,
 				8401F511223DD21600B897E7 /* Components */,
 				8401F508223DBF9D00B897E7 /* Models */,
 				845EC6502249AD0F00FA3ABD /* UIImageExtensions.swift */,
@@ -716,6 +719,7 @@
 				846A4470226D1542007A615E /* WatchHandler.swift in Sources */,
 				84E15AF4223DB8800084BC02 /* AssetExtensions.swift in Sources */,
 				8401F510223DC55600B897E7 /* PassView.swift in Sources */,
+				843417F1227162CF0004EB6E /* SecretsHandler.swift in Sources */,
 				845EC64F22499B8C00FA3ABD /* UITextFieldExtensions.swift in Sources */,
 				84C05CA9226BD14B00D8D0C5 /* PassMenuTableView.swift in Sources */,
 				84C05CA7226BCCD300D8D0C5 /* PreviewPassViewController.swift in Sources */,
