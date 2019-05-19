@@ -78,7 +78,7 @@ class HomeViewController: UITableViewController {
     let emptyCell: UITableViewCell = {
         let emptyCell = UITableViewCell(style: .subtitle, reuseIdentifier: "emptyCell")
         emptyCell.textLabel?.text = "No tags"
-        emptyCell.detailTextLabel?.text = "Look's like you don't have any tags. Tap here to create one."
+        emptyCell.detailTextLabel?.text = "Look's like you don't have any passes. Tap here to create one."
         emptyCell.detailTextLabel?.numberOfLines = 0
         emptyCell.detailTextLabel?.lineBreakMode = .byWordWrapping
         return emptyCell
