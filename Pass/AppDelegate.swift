@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeViewController = HomeViewController()
         let navigationController = UINavigationController(rootViewController: homeViewController)
 
-        Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+//        Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

@@ -75,28 +75,16 @@ class HomeViewController: UITableViewController {
 
     //MARK: - TableView
 
-    let emptyCell: UITableViewCell = {
-        let emptyCell = UITableViewCell(style: .subtitle, reuseIdentifier: "emptyCell")
-        emptyCell.textLabel?.text = "No passes"
-        emptyCell.detailTextLabel?.text = "Look's like you don't have any passes. Tap here to create one."
-        emptyCell.detailTextLabel?.numberOfLines = 0
-        emptyCell.detailTextLabel?.lineBreakMode = .byWordWrapping
-        return emptyCell
-    }()
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let passes = passes else { return 1 }
-        return passes.count > 0 ? passes.count : 1
+        guard let passes = passes else { return 0 }
+        return passes.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard passes != nil && passes!.count > 0 else {
-            return emptyCell
-        }
         guard let cellData = passes?[indexPath.row] else { return UITableViewCell() }
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = cellData.title
@@ -106,11 +94,6 @@ class HomeViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard passes != nil && passes!.count > 0 else {
-            let addPassVC = ModifyPassViewController(state: .new)
-            navigationController?.pushViewController(addPassVC, animated: true)
-            return
-        }
         guard let pass = passes?[indexPath.row] else { return }
         let previewPassVC = PreviewPassViewController(pass: pass)
         navigationController?.pushViewController(previewPassVC, animated: true)

@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import StoreKit
 
 class PreviewPassViewController: UIViewController, PassMenuDelegate, ErrorProtocol {
 
@@ -28,6 +29,7 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate, ErrorProtoc
         setupPassView()
         setupTableView()
         observe()
+        requestReview()
     }
 
     //MARK: - Navbar
@@ -123,5 +125,19 @@ class PreviewPassViewController: UIViewController, PassMenuDelegate, ErrorProtoc
                 self?.presentError(withTitle: "Something wen't wrong", withText: "If the error persists please email me.")
             }
         })
+    }
+
+    //MARK: - Review Request
+
+    func requestReview() {
+        let defaults = UserDefaults.standard
+        let key = "passPreviewCount"
+        let count = defaults.integer(forKey: key)
+        if count == 3 {
+            SKStoreReviewController.requestReview()
+            defaults.set(count + 1, forKey: key)
+        } else if count < 3 {
+            defaults.set(count + 1, forKey: key)
+        }
     }
 }
